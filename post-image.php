@@ -24,7 +24,7 @@ $target_path = "uploads/";
 $target_path = $target_path . basename( $_FILES['uploadedfile']['name']); 
 $link = mysql_connect('localhost','dbuser', 'dbpassword') OR DIE(mysql_error);
     mysql_select_db("$mySQLdatabase", $link);
-    mysql_query("INSERT INTO `$mySQLtabe` (`session`, `image_location`) VALUES ('$session_id', '$imageName')") OR DIE(mysql_error());
+    mysql_query("INSERT INTO `$mySQLtabel` (`session`, `image_location`) VALUES ('$session_id', '$imageName')") OR DIE(mysql_error());
     mysql_close($link);
     
 if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) { 
