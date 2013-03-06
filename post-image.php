@@ -21,12 +21,8 @@ mysql_select_db($mySQLdatabase, $link);
 $target_path = "uploads/";
 
 
-
-/***************************/
-/* DO NOT MODIFY PAST HERE */
-/***************************/
 $target_path = $target_path . basename( $_FILES['uploadedfile']['name']); 
-$link = mysql_connect('localhost','thepower_bue', 'dkj32p3m') OR DIE(mysql_error);
+$link = mysql_connect('localhost','dbuser', 'dbpassword') OR DIE(mysql_error);
     mysql_select_db("$mySQLdatabase", $link);
     mysql_query("INSERT INTO `$mySQLtabe` (`session`, `image_location`) VALUES ('$session_id', '$imageName')") OR DIE(mysql_error());
     mysql_close($link);
